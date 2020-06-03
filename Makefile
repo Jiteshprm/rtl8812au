@@ -1865,7 +1865,7 @@ strip:
 
 modules_install:
 	install -p -m 644 $(MODULE_NAME).ko  $(MODDESTDIR)
-    ifneq ("$(wildcard /sbin/depmod","")
+    ifneq ("$(wildcard /sbin/depmod)","")
         /sbin/depmod -a ${KVER}
     endif
 	#/sbin/depmod -a ${KVER}
