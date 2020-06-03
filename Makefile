@@ -1869,8 +1869,7 @@ modules_install:
 
 install:
 	install -p -m 644 $(MODULE_NAME).ko  $(MODDESTDIR)
-    test ! -f /sbin/depmod || /sbin/depmod -a ${KVER}
-	#/sbin/depmod -a ${KVER}
+	/sbin/depmod -a ${KVER}
 
 uninstall:
 	rm -f $(MODDESTDIR)/$(MODULE_NAME).ko
