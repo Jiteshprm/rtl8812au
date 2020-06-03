@@ -1863,6 +1863,11 @@ modules:
 strip:
 	$(CROSS_COMPILE)strip $(MODULE_NAME).ko --strip-unneeded
 
+modules_install:
+	install -p -m 644 $(MODULE_NAME).ko  $(MODDESTDIR)
+    test ! -f /sbin/depmod || /sbin/depmod -a ${KVER}
+	#/sbin/depmod -a ${KVER}
+
 install:
 	install -p -m 644 $(MODULE_NAME).ko  $(MODDESTDIR)
     test ! -f /sbin/depmod || /sbin/depmod -a ${KVER}
