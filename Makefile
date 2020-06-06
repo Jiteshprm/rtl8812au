@@ -1866,7 +1866,7 @@ strip:
 
 
 modules_install:
-    $(MAKE) INSTALL_MOD_STRIP=1 -C $(KSRC) M=$(shell pwd) modules_install
+	$(MAKE) INSTALL_MOD_STRIP=1 -C $(KSRC) M=$(shell pwd) modules_install
 	#install -p -m 644 $(MODULE_NAME).ko  $(MODDESTDIR)
 	#/sbin/depmod -a ${KVER}
 
